@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+	  <RootNamespace>Byndyusoft.DotNet.TestInfrastructure</RootNamespace>
+	  <Version>0.0.1</Version>
+	  <PackageId>Byndyusoft.DotNet.TestInfrastructure</PackageId>
+	  <Title>Byndyusoft.DotNet.TestInfrastructure</Title>
+	  <Authors>Byndyusoft</Authors>
+	  <Description>Provides basic infrastructure for integration and unit tests based on XUnit and FluentAssertions</Description>
+	  <PackageTags>Byndyusoft;Tests;XUnit;FluentAssertions</PackageTags>
+	  <RepositoryUrl>https://github.com/Byndyusoft/byndyusoft-dotnet-test-infrastructure</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageIcon>icon.png</PackageIcon>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\icon.png" Pack="true" PackagePath="icon.png" />
+	</ItemGroup>
+
+</Project>
