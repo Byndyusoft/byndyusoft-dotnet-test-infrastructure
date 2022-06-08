@@ -20,4 +20,9 @@
 		<None Include="..\..\icon.png" Pack="true" PackagePath="icon.png" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="xunit" Version="2.4.1" />
+	</ItemGroup>
+
 </Project>
