@@ -1,4 +1,4 @@
-namespace Byndyusoft.DotNet.TestInfrastructure.TestBase
+namespace Byndyusoft.DotNet.Testing.Infrastructure.TestBase
 {
     using Newtonsoft.Json;
     using Xunit.Abstractions;

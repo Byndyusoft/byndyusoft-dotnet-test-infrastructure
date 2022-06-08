@@ -1,4 +1,4 @@
-namespace Byndyusoft.DotNet.TestInfrastructure.Extensions
+namespace Byndyusoft.DotNet.Testing.Infrastructure.Extensions
 {
     using System;
     using FluentAssertions;
