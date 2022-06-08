@@ -20,12 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Byndyusoft.DotNet.Testing.Infrastructure\Byndyusoft.DotNet.Testing.Infrastructure.csproj" />
+    <Folder Include="Extensions\" />
+    <Folder Include="TestCaseItemBaseExamples\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="TestCaseItemBaseExamples\" />
+    <ProjectReference Include="..\..\src\Byndyusoft.DotNet.Testing.Infrastructure\Byndyusoft.DotNet.Testing.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
