@@ -14,7 +14,7 @@
 	  <PackageIcon>icon.png</PackageIcon>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <IsPackable>true</IsPackable>
-	  <UserSecretsId>271f725a-77d6-44fa-bf68-1898f60e20a1</UserSecretsId>
+    <IsTestProject>false</IsTestProject>
   </PropertyGroup>
 
 	<ItemGroup>
