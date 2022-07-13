@@ -1,10 +1,9 @@
-using Byndyusoft.DotNet.Testing.Infrastructure.Extensions;
-
-namespace Byndyusoft.DotNet.Testing.Infrastructure.Tests.Extensions
+namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.Extensions
 {
     using System;
     using System.Collections.Generic;
     using FluentAssertions;
+    using global::Byndyusoft.DotNet.Testing.Infrastructure.Extensions;
     using Moq;
     using Xunit;
     using Xunit.Sdk;

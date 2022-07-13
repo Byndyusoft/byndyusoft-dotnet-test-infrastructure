@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.DotNet.Testing.Infrastructure", "src\Byndyusoft.DotNet.Testing.Infrastructure\Byndyusoft.DotNet.Testing.Infrastructure.csproj", "{4BF58468-C533-4DB8-BF3A-9511E5F8052D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.DotNet.Testing.Infrastructure.Tests", "tests\Byndyusoft.DotNet.Testing.Infrastructure.Tests\Byndyusoft.DotNet.Testing.Infrastructure.Tests.csproj", "{6D86BBB3-E289-4DA3-B9B8-B18DDBA0DF81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Byndyusoft.DotNet.Testing.Infrastructure.Tests", "tests\Byndyusoft.DotNet.Testing.Infrastructure.Tests\Byndyusoft.DotNet.Testing.Infrastructure.Tests.csproj", "{0F2613CD-54EB-4914-8C49-CA8783954319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{4BF58468-C533-4DB8-BF3A-9511E5F8052D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF58468-C533-4DB8-BF3A-9511E5F8052D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF58468-C533-4DB8-BF3A-9511E5F8052D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D86BBB3-E289-4DA3-B9B8-B18DDBA0DF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D86BBB3-E289-4DA3-B9B8-B18DDBA0DF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D86BBB3-E289-4DA3-B9B8-B18DDBA0DF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D86BBB3-E289-4DA3-B9B8-B18DDBA0DF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F2613CD-54EB-4914-8C49-CA8783954319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F2613CD-54EB-4914-8C49-CA8783954319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F2613CD-54EB-4914-8C49-CA8783954319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F2613CD-54EB-4914-8C49-CA8783954319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
