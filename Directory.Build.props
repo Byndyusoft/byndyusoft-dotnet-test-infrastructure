@@ -1,6 +1,22 @@
 <Project>
 	<PropertyGroup>
+		
+		<TargetFramework>net5.0</TargetFramework>
 		<Nullable>enable</Nullable>
-		<LangVersion>9</LangVersion>
+		
+		<AssemblyName>Byndyusoft.$(MSBuildProjectName)</AssemblyName>
+		<RootNamespace>Byndyusoft.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		
+		<VersionPrefix>0.0.1</VersionPrefix>
+		<Authors>Byndyusoft</Authors>
+		
+		<PackageTags>Byndyusoft;Testing</PackageTags>
+		
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		
+		<RepositoryUrl>https://github.com/Byndyusoft/byndyusoft-dotnet-test-infrastructure</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		
 	</PropertyGroup>
 </Project>
