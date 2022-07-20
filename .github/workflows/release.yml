@@ -30,7 +30,7 @@ jobs:
       - name: publish
         uses: rohith/publish-nuget@v2
         with:
-          PROJECT_FILE_PATH: src/Byndyusoft.DotNet.TestInfrastructure/Byndyusoft.DotNet.TestInfrastructure.csproj
+          PROJECT_FILE_PATH: src/Byndyusoft.DotNet.Testing.Infrastructure/Byndyusoft.DotNet.Testing.Infrastructure.csproj
           VERSION_FILE_PATH: Directory.Build.props
           VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
           TAG_COMMIT: false
