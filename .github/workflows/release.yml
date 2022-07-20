@@ -36,3 +36,5 @@ jobs:
           TAG_COMMIT: false
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           INCLUDE_SYMBOLS: true
+          
+          
