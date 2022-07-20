@@ -11,7 +11,8 @@ jobs:
       DOTNET_NOLOGO: true
     steps:
       - name: checkout
-        
+        uses: actions/checkout@master        
+          
       - name: install dotnet
         uses: actions/setup-dotnet@v1
         with:
