@@ -11,7 +11,6 @@
 	  <PackageTags>Byndyusoft;Tests;XUnit;FluentAssertions</PackageTags>
 	  <RepositoryUrl>https://github.com/Byndyusoft/byndyusoft-dotnet-test-infrastructure</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
-	  <PackageIcon>icon.png</PackageIcon>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <IsPackable>true</IsPackable>
     <IsTestProject>false</IsTestProject>
