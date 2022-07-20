@@ -11,12 +11,11 @@ jobs:
       DOTNET_NOLOGO: true
     steps:
       - name: checkout
-        uses: actions/checkout@master
         
       - name: install dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3.1.x
+          dotnet-version: '5.0.x'
           
       - name: install packages
         run: dotnet restore
