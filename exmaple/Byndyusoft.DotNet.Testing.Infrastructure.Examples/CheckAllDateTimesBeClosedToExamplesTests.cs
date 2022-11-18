@@ -32,7 +32,7 @@ namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Examples
             // Assert
         }
 
-        [Fact]
+        [Fact(Skip = "Этот тест должен падать")]
         public void CheckAllDateTimesBeClosedTo__AllDateTimeNotCloseToEachOtherWith5seconds_ShouldFail()
         {
             // Arrange

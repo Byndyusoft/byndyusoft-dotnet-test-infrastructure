@@ -23,7 +23,7 @@ namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Examples
             // Assert
         }
 
-        [Fact]
+        [Fact(Skip = "Этот тест должен падать")]
         public void CheckIdIsPositive_IdNegative_ShouldFail()
         {
             // Arrange
