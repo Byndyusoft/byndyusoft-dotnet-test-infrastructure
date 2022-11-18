@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Byndyusoft.DotNet.Testing.Infrastructure.Tests</AssemblyName>
+    <AssemblyName>Byndyusoft.DotNet.Testing.Infrastructure.Examples</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
