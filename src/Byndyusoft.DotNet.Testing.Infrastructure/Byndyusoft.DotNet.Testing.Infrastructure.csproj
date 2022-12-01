@@ -3,7 +3,7 @@
   <PropertyGroup>
 	  <TargetFramework>netstandard2.1</TargetFramework>
 	  <RootNamespace>Byndyusoft.DotNet.Testing.Infrastructure</RootNamespace>
-	  <Version>1.0.8-alpha</Version>
+	  <Version>1.1.2</Version>
 	  <PackageId>Byndyusoft.DotNet.Testing.Infrastructure</PackageId>
 	  <Title>Byndyusoft.DotNet.Testing.Infrastructure</Title>
 	  <Authors>Byndyusoft</Authors>
