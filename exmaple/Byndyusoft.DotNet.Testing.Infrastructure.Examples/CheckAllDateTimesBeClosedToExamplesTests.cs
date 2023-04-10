@@ -7,7 +7,7 @@ namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Examples
     using Xunit;
 
     /// <summary>
-    ///     Примеры тестов для <see cref="EquivalencyAssertionOptionsExtensions.CheckAllDateTimesBeClosedTo"/>
+    ///     Примеры тестов для <see cref="EquivalencyAssertionOptionsExtensions.CheckAllDateTimesBeClosedTo" />
     /// </summary>
     public class CheckAllDateTimesBeClosedToExamplesTests
     {
@@ -59,12 +59,12 @@ namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Examples
         {
             // Arrange
             var actual = new TestEntityWithDateTimeOffset
-            {
+                             {
                                  CreateDate = DateTimeOffset.UtcNow,
                                  UpdateDate = DateTimeOffset.UtcNow
                              };
             var expected = new TestEntityWithDateTimeOffset
-            {
+                               {
                                    CreateDate = DateTimeOffset.UtcNow.AddSeconds(4),
                                    UpdateDate = DateTimeOffset.UtcNow.AddSeconds(-5)
                                };
@@ -85,7 +85,7 @@ namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Examples
                                  UpdateDate = DateTimeOffset.UtcNow
                              };
             var expected = new TestEntityWithDateTimeOffset
-            {
+                               {
                                    CreateDate = DateTimeOffset.UtcNow.AddSeconds(10),
                                    UpdateDate = DateTimeOffset.UtcNow.AddSeconds(-10)
                                };
