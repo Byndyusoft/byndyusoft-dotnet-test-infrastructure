@@ -27,4 +27,16 @@
     <ProjectReference Include="..\..\src\Byndyusoft.DotNet.Testing.Infrastructure\Byndyusoft.DotNet.Testing.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ReadmeGeneration\TestCases\WithoutTemplate\Expected.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReadmeGeneration\TestCases\WithTemplate\Expected.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReadmeGeneration\TestCases\WithTemplate\README_TestCases_Template.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

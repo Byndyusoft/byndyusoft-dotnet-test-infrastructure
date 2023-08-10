@@ -19,6 +19,16 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.TestBase
         /// </summary>
         public string Description { get; set; }
 
+        /// <summary>
+        ///     Категория - для разделения кейсов на первом уровне
+        /// </summary>
+        public string? Category { get; set; }
+
+        /// <summary>
+        ///     Подкатегория - для разделения кейсов на втором уровне
+        /// </summary>
+        public string? SubCategory { get; set; }
+
         public void Deserialize(IXunitSerializationInfo info)
         {
             var serialized = info.GetValue<string>(nameof(TestCaseItemBase));

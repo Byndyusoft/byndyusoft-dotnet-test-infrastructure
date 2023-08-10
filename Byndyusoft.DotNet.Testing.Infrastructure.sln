@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		README.md = README.md
+		README_TestCases.md = README_TestCases.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.DotNet.Testing.Infrastructure", "src\Byndyusoft.DotNet.Testing.Infrastructure\Byndyusoft.DotNet.Testing.Infrastructure.csproj", "{4BF58468-C533-4DB8-BF3A-9511E5F8052D}"
