@@ -126,7 +126,7 @@ Description of test-case 3
 bla-bla
 ",
                 Category = "CategoryAnotherFeature",
-                SubCategory = "Какая-то подкатегория"
+                SubCategory = "Какая-то подкатегория на русском с пробелами"
             };
         }
     }

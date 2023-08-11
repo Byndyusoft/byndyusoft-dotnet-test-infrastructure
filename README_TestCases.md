@@ -14,7 +14,7 @@
   * [NoSubCategory (Тестов: 1)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-Tm9TdWJDYXRlZ29yeQ==)
     * [(P) TestName8](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase8)  
 * [CategoryAnotherFeature (Тестов: 1)](#Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==)
-  * [Какая-то подкатегория (Тестов: 1)](#Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjw==)
+  * [Какая-то подкатегория на русском с пробелами (Тестов: 1)](#Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjyDQvdCwINGA0YPRgdGB0LrQvtC8INGBINC/0YDQvtCx0LXQu9Cw0LzQuA==)
     * [(A) TestName3](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase3)  
 * [CategorySomeFeature2 (Тестов: 1)](#Q2F0ZWdvcnlTb21lRmVhdHVyZTI=)
     * [(P) TestName9](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase9)  
@@ -29,15 +29,12 @@
 # Описание
 
 
----
+Что важно знать о тестах в проекте:
+* Во-первых 
+* Во-вторых
+* В-третьих
 
-**Условные обозначения:**  
-TODO  
-
-**Примечания:**  
-TODO  
-
----
+**NOTE** А ещё вот
 
 ---
 <a name="readme-report-legend-link-should-never-duplicate"></a>
@@ -137,8 +134,8 @@ bla-bla
 Другая важная фича
 
 
-<a name="Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjw=="></a>
-### Какая-то подкатегория (Тестов: 1)
+<a name="Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjyDQvdCwINGA0YPRgdGB0LrQvtC8INGBINC/0YDQvtCx0LXQu9Cw0LzQuA=="></a>
+### Какая-то подкатегория на русском с пробелами (Тестов: 1)
 
 
 Сценарии другой важной фичи
