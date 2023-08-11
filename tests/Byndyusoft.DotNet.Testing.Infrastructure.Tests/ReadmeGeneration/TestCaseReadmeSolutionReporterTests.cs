@@ -3,6 +3,7 @@ namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGenera
     using System;
     using System.IO;
     using System.Reflection;
+    using System.Text;
     using System.Threading.Tasks;
     using FluentAssertions;
     using global::Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities;
@@ -231,6 +232,29 @@ bla-bla
 
     public class SomeTests
     {
+        [Fact]
+        public async Task Some_Test_With_Ctor()
+        {
+            //Arrange
+            var testCase = new TestCaseItem
+            {
+                TestId = "TestId11",
+                Description = @"
+TestName11
+
+Description of test-case 11 
+bla-bla
+",
+                Category = "CategorySomeFeature",
+                SubCategory = "SubCategorySomeScenarios"
+
+            };
+
+            //Act
+
+            //Assert
+        }
+
         [Fact]
         public async Task Some_Test_Fact()
         {

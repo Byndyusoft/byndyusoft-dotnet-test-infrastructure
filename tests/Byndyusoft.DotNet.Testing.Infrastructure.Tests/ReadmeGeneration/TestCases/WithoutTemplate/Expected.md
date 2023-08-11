@@ -1,5 +1,5 @@
 # Тест-кейсы
-#### Всего тестов: 9
+#### Всего тестов: 10
   
   
 # Содержание:  
@@ -8,10 +8,11 @@
 * [CategoryAnotherFeature (Тестов: 1)](#Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==)
   * [Какая-то подкатегория на русском с пробелами (Тестов: 1)](#Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjyDQvdCwINGA0YPRgdGB0LrQvtC8INGBINC/0YDQvtCx0LXQu9Cw0LzQuA==)
     * [(A) TestName3](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase3)  
-* [CategorySomeFeature (Тестов: 4)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==)
-  * [SubCategorySomeScenarios (Тестов: 3)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z)
+* [CategorySomeFeature (Тестов: 5)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==)
+  * [SubCategorySomeScenarios (Тестов: 4)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z)
     * [(A) TestName1](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase1)  
     * [(P) TestName1](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase7)  
+    * [(A) TestName11](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem)  
     * [(A) TestName2](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase2)  
   * [NoSubCategory (Тестов: 1)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-Tm9TdWJDYXRlZ29yeQ==)
     * [(P) TestName8](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase8)  
@@ -59,10 +60,10 @@ bla-bla
 
 ---
 <a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ=="></a>
-## CategorySomeFeature (Тестов: 4)
+## CategorySomeFeature (Тестов: 5)
 
 <a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z"></a>
-### SubCategorySomeScenarios (Тестов: 3)
+### SubCategorySomeScenarios (Тестов: 4)
 
 <a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase1"></a>
 #### (A) TestName1
@@ -91,6 +92,21 @@ bla-bla
 TestName1
 
 Description of test-case 1  
+bla-bla
+
+---
+<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem"></a>
+#### (A) TestName11
+  
+**TestId:** TestId11  
+**TestClass:** Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem  
+**TestMethods:** Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTests.Some_Test_With_Ctor
+  
+**Description:**  
+
+TestName11
+
+Description of test-case 11 
 bla-bla
 
 ---

@@ -1,15 +1,16 @@
 # Тест-кейсы
-#### Всего тестов: 9
+#### Всего тестов: 10
   
   
 # Содержание:  
   
 * [Описание](#root-readme-description-link-should-never-duplicate)
 * [Условные обозначения](#readme-report-legend-link-should-never-duplicate)
-* [CategorySomeFeature (Тестов: 4)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==)
-  * [SubCategorySomeScenarios (Тестов: 3)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z)
+* [CategorySomeFeature (Тестов: 5)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==)
+  * [SubCategorySomeScenarios (Тестов: 4)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z)
     * [(A) TestName1](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase1)  
     * [(P) TestName1](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase7)  
+    * [(A) TestName11](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem)  
     * [(A) TestName2](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase2)  
   * [NoSubCategory (Тестов: 1)](#Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-Tm9TdWJDYXRlZ29yeQ==)
     * [(P) TestName8](#Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase8)  
@@ -51,14 +52,14 @@
 
 ---
 <a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ=="></a>
-## CategorySomeFeature (Тестов: 4)
+## CategorySomeFeature (Тестов: 5)
 
 
 Важная фича
 
 
 <a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z"></a>
-### SubCategorySomeScenarios (Тестов: 3)
+### SubCategorySomeScenarios (Тестов: 4)
 
 
 Сценарии важной фичи
@@ -91,6 +92,21 @@ bla-bla
 TestName1
 
 Description of test-case 1  
+bla-bla
+
+---
+<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem"></a>
+#### (A) TestName11
+  
+**TestId:** TestId11  
+**TestClass:** Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem  
+**TestMethods:** Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTests.Some_Test_With_Ctor
+  
+**Description:**  
+
+TestName11
+
+Description of test-case 11 
 bla-bla
 
 ---
