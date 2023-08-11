@@ -158,6 +158,37 @@ bla-bla
 }
 ```
 
+### Inline тест кейсы
+
+Генератор также сможет добавить в документацию заинлайненные тест кейсы. Такие тест кейсы создаются прямо в коде теста через конструкцию new и инициализатор свойств:
+
+```csharp
+[Fact]
+public async Task Some_Important_Test()
+{
+    // ARRANGE
+    var testCase = new TestCaseItem
+    {
+        TestId = "TestId1",
+        Description = @"
+
+TestName1
+
+Description of test-case 1  
+bla-bla
+",
+         Category = "CategorySomeFeature",
+         SubCategory = "SubCategorySomeScenarios"
+     }
+
+    // ACT
+        // что-то происходит
+
+    // ASSERT
+        // что-то проверяется
+}
+```
+
 ### Пример использования генератора:
 
 Для создания отчёта установите в проекте пакет `Sod.Tests.Shared.IntegrationTests`  и создайте модульный тест примерно следующего содержания:
