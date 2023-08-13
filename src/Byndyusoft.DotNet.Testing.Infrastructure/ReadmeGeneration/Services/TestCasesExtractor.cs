@@ -51,15 +51,15 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             // получаем экземпляры всех тест кейсов, созданных в тестах через new
             var inlineTestCases = tests.SelectMany(t => t.InlineTestCases)
                                        .Select(t => new TestCase
-                                                        {
-                                                            TestId = t.TestId,
-                                                            Description = t.Description,
-                                                            Category = t.Category,
-                                                            SubCategory = t.SubCategory,
-                                                            TestCaseItemType = t.Type,
-                                                            TestCaseType = t.Type, // TODO: подумать, какой здесь должен быть тип
-                                                            TestMethods = new []{ $"{t.TestMethod.ReflectedType!.FullName}.{t.TestMethod.Name}" }
-                                                        })
+                                       {
+                                           TestId = t.TestId,
+                                           Description = t.Description,
+                                           Category = t.Category,
+                                           SubCategory = t.SubCategory,
+                                           TestCaseItemType = t.Type,
+                                           TestCaseType = t.Type, // TODO: подумать, какой здесь должен быть тип
+                                           TestMethods = new[] { $"{t.TestMethod.ReflectedType!.FullName}.{t.TestMethod.Name}" }
+                                       })
                                        .ToArray();
 
             // конкатим тест кейсы
@@ -198,6 +198,11 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
         /// <param name="testCaseTypes">Типы тест-кейсов</param>
         private InlineTestCase[] GetInlineTestCases(Instruction[] instructions, MethodInfo test, Type[] testCaseTypes)
         {
+            if (test.Name == "Some_Test_With_Ctor")
+            {
+                int i = 0;
+            }
+
             var results = new List<InlineTestCase>();
 
             foreach (var instruction in instructions)
@@ -282,38 +287,30 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
                         {
                             case "set_TestId":
                                 {
-                                    var dup = currentInstruction.Previous;
-                                    if (dup.OpCode == OpCodes.Ldstr)
-                                    {
-                                        result.TestId = dup.Operand as string;
-                                    }
+                                    if (result.TestId != null)
+                                        break;
+                                    result.TestId = GetTestCasePropertyValue(currentInstruction);
                                     break;
                                 }
                             case "set_Description":
                                 {
-                                    var dup = currentInstruction.Previous;
-                                    if (dup.OpCode == OpCodes.Ldstr)
-                                    {
-                                        result.Description = dup.Operand as string;
-                                    }
+                                    if (result.Description != null)
+                                        break;
+                                    result.Description = GetTestCasePropertyValue(currentInstruction);
                                     break;
                                 }
                             case "set_Category":
                                 {
-                                    var dup = currentInstruction.Previous;
-                                    if (dup.OpCode == OpCodes.Ldstr)
-                                    {
-                                        result.Category = dup.Operand as string;
-                                    }
+                                    if (result.Category != null)
+                                        break;
+                                    result.Category = GetTestCasePropertyValue(currentInstruction);
                                     break;
                                 }
                             case "set_SubCategory":
                                 {
-                                    var dup = currentInstruction.Previous;
-                                    if (dup.OpCode == OpCodes.Ldstr)
-                                    {
-                                        result.SubCategory = dup.Operand as string;
-                                    }
+                                    if (result.SubCategory != null)
+                                        break;
+                                    result.SubCategory = GetTestCasePropertyValue(currentInstruction);
                                     break;
                                 }
                         }
@@ -324,6 +321,63 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             }
 
             return result;
+        }
+
+        private string? GetTestCasePropertyValue(Instruction calvirt)
+        {
+            if (calvirt.Previous == null)
+                return null;
+
+            var valueOp = calvirt.Previous!;
+
+            if (valueOp.OpCode == OpCodes.Ldstr)
+            {
+                return valueOp.Operand as string;
+            }
+
+            if (valueOp.OpCode == OpCodes.Ldfld &&
+                valueOp.Operand is MemberInfo field)
+            {
+                var fieldName = field.Name;
+                return SearchStfld(valueOp, fieldName);
+            }
+            
+            if (valueOp.OpCode.ToString().StartsWith("ldloc"))
+            {
+                var ldloc = valueOp.OpCode.ToString();
+                var stlocOpCode = "stloc." + ldloc.Remove(0, "ldloc.".Length);
+                return SearchStloc(valueOp, stlocOpCode);
+            }
+
+            return null;
+        }
+
+        private string? SearchStloc(Instruction? instruction, string stloc)
+        {
+            if (instruction == null)
+                return null;
+
+            if(instruction.OpCode.ToString() == stloc &&
+               instruction.Previous != null &&
+               instruction.Previous.OpCode == OpCodes.Ldstr)
+                return instruction.Previous.Operand as string;
+
+            return SearchStloc(instruction.Previous, stloc);
+        }
+
+        private string? SearchStfld(Instruction? instruction, string fieldame)
+        {
+            if (instruction == null)
+                return null;
+
+            if (instruction.OpCode == OpCodes.Stfld &&
+                instruction.Operand is MemberInfo member &&
+                member.Name == fieldame &&
+                instruction.Previous != null &&
+                instruction.Previous.OpCode == OpCodes.Ldstr)
+                return instruction.Previous.Operand as string;
+
+            return SearchStfld(instruction.Previous, fieldame);
         }
 
         /// <summary>
@@ -360,7 +414,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             /// <summary>
             ///     Тип тест кейса
             /// </summary>
-            public Type Type { get; set; }
+            public Type Type { get; set; } = default!;
 
             /// <summary>
             ///     Тестовый метод

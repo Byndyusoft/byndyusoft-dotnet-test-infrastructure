@@ -61,7 +61,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             set { operand = value; }
         }
 
-        public Instruction Previous
+        public Instruction? Previous
         {
             get { return previous; }
             set { previous = value; }

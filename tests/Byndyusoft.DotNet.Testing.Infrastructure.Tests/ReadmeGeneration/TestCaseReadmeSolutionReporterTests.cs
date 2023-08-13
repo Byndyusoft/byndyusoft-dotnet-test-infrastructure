@@ -236,9 +236,12 @@ bla-bla
         public async Task Some_Test_With_Ctor()
         {
             //Arrange
+            var testId1 = "TestId11";
+            var testId2 = "TestId11";
+            var testId3 = "TestId11";
             var testCase = new TestCaseItem
             {
-                TestId = "TestId11",
+                TestId = testId3,
                 Description = @"
 TestName11
 
