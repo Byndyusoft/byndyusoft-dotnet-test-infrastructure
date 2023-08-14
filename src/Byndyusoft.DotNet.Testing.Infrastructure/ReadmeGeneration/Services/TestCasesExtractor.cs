@@ -198,11 +198,6 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
         /// <param name="testCaseTypes">Типы тест-кейсов</param>
         private InlineTestCase[] GetInlineTestCases(Instruction[] instructions, MethodInfo test, Type[] testCaseTypes)
         {
-            if (test.Name == "Some_Test_With_Ctor")
-            {
-                int i = 0;
-            }
-
             var results = new List<InlineTestCase>();
 
             foreach (var instruction in instructions)
@@ -323,61 +318,90 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             return result;
         }
 
-        private string? GetTestCasePropertyValue(Instruction calvirt)
+        /// <summary>
+        ///     Возвращает значение свойства для тест-кейса
+        /// </summary>
+        /// <param name="setterInstruction">Инструкция по вызову сеттера свойства</param>
+        /// <remarks>
+        ///     Возвращается назад по инструкция метода, чтобы найти значение, которое передано в сеттер.
+        /// </remarks>
+        private string? GetTestCasePropertyValue(Instruction setterInstruction)
         {
-            if (calvirt.Previous == null)
+            if (setterInstruction.Previous == null)
                 return null;
 
-            var valueOp = calvirt.Previous!;
-
-            if (valueOp.OpCode == OpCodes.Ldstr)
+            //  инструкция, которая передаёт значение в аргумент сеттера
+            var setterArgInstruction = setterInstruction.Previous!;
+            
+            // значение литерал?
+            if (setterArgInstruction.OpCode == OpCodes.Ldstr)
             {
-                return valueOp.Operand as string;
+                return setterArgInstruction.Operand as string;
             }
 
-            if (valueOp.OpCode == OpCodes.Ldfld &&
-                valueOp.Operand is MemberInfo field)
+            // значение - поле?
+            if (setterArgInstruction.OpCode == OpCodes.Ldfld &&
+                setterArgInstruction.Operand is MemberInfo field)
             {
                 var fieldName = field.Name;
-                return SearchStfld(valueOp, fieldName);
+                return SearchField(setterArgInstruction, fieldName);
             }
             
-            if (valueOp.OpCode.ToString().StartsWith("ldloc"))
+            // значение - локальная переменная?
+            if (setterArgInstruction.OpCode.ToString().StartsWith("ldloc"))
             {
-                var ldloc = valueOp.OpCode.ToString();
+                var ldloc = setterArgInstruction.OpCode.ToString();
                 var stlocOpCode = "stloc." + ldloc.Remove(0, "ldloc.".Length);
-                return SearchStloc(valueOp, stlocOpCode);
+                return SearchLocalVariable(setterArgInstruction, stlocOpCode);
             }
 
             return null;
         }
 
-        private string? SearchStloc(Instruction? instruction, string stloc)
+        /// <summary>
+        ///     Ищет значение локальной переменной
+        /// </summary>
+        /// <param name="setterArgInstruction">Инструкция, которая передаёт значение в аргумент сеттера</param>
+        /// <param name="localVariableStorage">Имя инструкции, которая хранит локальную переменную</param>
+        /// <remarks>
+        ///     Рекурсивно поднимается по списку инструкций, чтобы найти нужную локальную переменную
+        ///     Ожидается, что локальная переменная будет инициализироваться литералом
+        /// </remarks>
+        private string? SearchLocalVariable(Instruction? setterArgInstruction, string localVariableStorage)
         {
-            if (instruction == null)
+            if (setterArgInstruction == null)
                 return null;
 
-            if(instruction.OpCode.ToString() == stloc &&
-               instruction.Previous != null &&
-               instruction.Previous.OpCode == OpCodes.Ldstr)
-                return instruction.Previous.Operand as string;
+            if(setterArgInstruction.OpCode.ToString() == localVariableStorage &&
+               setterArgInstruction.Previous != null &&
+               setterArgInstruction.Previous.OpCode == OpCodes.Ldstr)
+                return setterArgInstruction.Previous.Operand as string;
 
-            return SearchStloc(instruction.Previous, stloc);
+            return SearchLocalVariable(setterArgInstruction.Previous, localVariableStorage);
         }
 
-        private string? SearchStfld(Instruction? instruction, string fieldame)
+        /// <summary>
+        ///     Ищет значение поля
+        /// </summary>
+        /// <param name="setterArgInstruction">Инструкция, которая передаёт значение в аргумент сеттера</param>
+        /// <param name="fieldName">Имя поля</param>
+        /// <remarks>
+        ///     Рекурсивно поднимается по списку инструкций, чтобы найти нужное поле
+        ///     Ожидается, что поле будет инициализироваться литералом
+        /// </remarks>
+        private string? SearchField(Instruction? setterArgInstruction, string fieldName)
         {
-            if (instruction == null)
+            if (setterArgInstruction == null)
                 return null;
 
-            if (instruction.OpCode == OpCodes.Stfld &&
-                instruction.Operand is MemberInfo member &&
-                member.Name == fieldame &&
-                instruction.Previous != null &&
-                instruction.Previous.OpCode == OpCodes.Ldstr)
-                return instruction.Previous.Operand as string;
+            if (setterArgInstruction.OpCode == OpCodes.Stfld &&
+                setterArgInstruction.Operand is MemberInfo member &&
+                member.Name == fieldName &&
+                setterArgInstruction.Previous != null &&
+                setterArgInstruction.Previous.OpCode == OpCodes.Ldstr)
+                return setterArgInstruction.Previous.Operand as string;
 
-            return SearchStfld(instruction.Previous, fieldame);
+            return SearchField(setterArgInstruction.Previous, fieldName);
         }
 
         /// <summary>
