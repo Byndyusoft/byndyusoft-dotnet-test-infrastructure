@@ -10,6 +10,7 @@
 	  <PackageTags>Byndyusoft;Tests;XUnit;FluentAssertions</PackageTags>
 	  <RepositoryUrl>https://github.com/Byndyusoft/byndyusoft-dotnet-test-infrastructure</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
+	  <IsTestProject>false</IsTestProject>
   </PropertyGroup>
 
 	<ItemGroup>
