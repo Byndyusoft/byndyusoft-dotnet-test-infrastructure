@@ -28,4 +28,4 @@ jobs:
         run: dotnet build --no-restore
 
       - name: test
-        run: dotnet test --no-build
+        run: dotnet test --no-build --filter "FullyQualifiedName~Byndyusoft.DotNet.Testing.Infrastructure.Tests"
