@@ -1,3 +1,6 @@
+using Xunit;
+
+[assembly: CollectionBehavior(MaxParallelThreads = -1)]
 namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Examples;
 
 using System;

@@ -1,6 +1,6 @@
 using Xunit;
 
-[assembly: CollectionBehavior(DisableTestParallelization = true)]
+[assembly: CollectionBehavior(MaxParallelThreads = -1)]
 namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration;
 
 using System;
