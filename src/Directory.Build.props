@@ -3,7 +3,9 @@
   <Import Project="../Directory.Build.props" />
 
   <PropertyGroup>
+	<TargetFrameworks>netstandard2.0;netstandard2.1;net7.0</TargetFrameworks>
     <PackageIcon>icon.png</PackageIcon>
+	<IsPackable>true</IsPackable>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\icon.png" Pack="true" PackagePath="icon.png" />

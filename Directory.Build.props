@@ -1,18 +1,17 @@
 <Project>
 	<PropertyGroup>
-		
-		<TargetFramework>net5.0</TargetFramework>
 		<Nullable>enable</Nullable>
-		
+
 		<AssemblyName>Byndyusoft.$(MSBuildProjectName)</AssemblyName>
 		<RootNamespace>Byndyusoft.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		
-		<Version>1.2.0</Version>
+		<Version>1.3.0</Version>
+		<LangVersion>11</LangVersion>
 		<Authors>Byndyusoft</Authors>
 		
 		<PackageTags>Byndyusoft;Testing</PackageTags>
 		
-		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		
 		<RepositoryUrl>https://github.com/Byndyusoft/byndyusoft-dotnet-test-infrastructure</RepositoryUrl>

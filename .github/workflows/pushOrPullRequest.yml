@@ -16,10 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install dotnet
+      - name: install dotnet 7.0
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '5.0.x'
+          dotnet-version: 7.0.x
 
       - name: Install packages
         run: dotnet restore
@@ -27,5 +27,5 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
-      - name: Test
+      - name: test
         run: dotnet test --no-build

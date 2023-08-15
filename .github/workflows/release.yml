@@ -11,12 +11,12 @@ jobs:
       DOTNET_NOLOGO: true
     steps:
       - name: checkout
-        uses: actions/checkout@master        
-          
-      - name: install dotnet
+        uses: actions/checkout@master
+
+      - name: install dotnet 7.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.x'
+          dotnet-version: 7.0.x
           
       - name: install packages
         run: dotnet restore
