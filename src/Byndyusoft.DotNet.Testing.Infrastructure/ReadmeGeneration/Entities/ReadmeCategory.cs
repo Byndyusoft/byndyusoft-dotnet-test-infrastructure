@@ -18,7 +18,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities
         /// <summary>
         ///     Общее количество тест-кейсов в категории
         /// </summary>
-        public int TestCount { get; set; }
+        public int TestsCount { get; set; }
 
         /// <summary>
         ///     Порядковая метка категории в шаблоне

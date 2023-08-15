@@ -6,6 +6,7 @@
     <IsPackable>false</IsPackable>
 
     <AssemblyName>Byndyusoft.DotNet.Testing.Infrastructure.Examples</AssemblyName>
+	<LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

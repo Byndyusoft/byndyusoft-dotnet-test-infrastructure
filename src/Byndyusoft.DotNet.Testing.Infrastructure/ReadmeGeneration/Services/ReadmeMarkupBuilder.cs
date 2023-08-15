@@ -45,7 +45,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
         /// <summary>
         ///     Общее число тестов в отчёте
         /// </summary>
-        private readonly int _testCount;
+        private readonly int _testsCount;
 
         /// <summary>
         ///     Ошибки формирования отчёта
@@ -65,11 +65,11 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
         {
             // метка ссылки на общее описание тесткейсов
             _descriptionLink = "root-readme-description-link-should-never-duplicate";
-
+            
             _description = readmeReport.Description;
             _name = readmeReport.Name;
-            _testCount = readmeReport.TestCount;
-            _errors = readmeReport.Validate();
+            _testsCount = readmeReport.TestsCount;
+            _errors = readmeReport.GetErrors();
 
             // есть ли в отчёте непустые категории 
             _hasOnlyEmptyCategories = readmeReport.Categories.All(c => c.Name is null);
@@ -103,11 +103,11 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             var categoryName = category.Name ?? "NoCategory";
 
             // добавляем ссылку на категорию в содержание
-            _tableOfContent.AppendLine($"* [{categoryName} (Тестов: {category.TestCount})](#{categoryName.ToBase64()})");
+            _tableOfContent.AppendLine($"* [{categoryName} (Тестов: {category.TestsCount})](#{categoryName.ToBase64()})");
 
             // добавляем категорию в тело
             _body.AppendLine(@$"<a name=""{categoryName.ToBase64()}""></a>");
-            _body.AppendLine($"## {categoryName} (Тестов: {category.TestCount})");
+            _body.AppendLine($"## {categoryName} (Тестов: {category.TestsCount})");
             
             // добавляем описание категории, если оно определено в шаблоне
             if (category.Description != null)
@@ -134,11 +134,11 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             var subCategoryName = subCategory.Name ?? "NoSubCategory";
 
             // добавляем ссылку на подкатегорию в содержание
-            _tableOfContent.AppendLine($"  * [{subCategoryName} (Тестов: {subCategory.TestCount})](#{categoryName.ToBase64()}-{subCategoryName.ToBase64()})");
+            _tableOfContent.AppendLine($"  * [{subCategoryName} (Тестов: {subCategory.TestsCount})](#{categoryName.ToBase64()}-{subCategoryName.ToBase64()})");
 
             // добавляем подкатегорию в тело
             _body.AppendLine(@$"<a name=""{categoryName.ToBase64()}-{subCategoryName.ToBase64()}""></a>");
-            _body.AppendLine($"### {subCategoryName} (Тестов: {subCategory.TestCount})");
+            _body.AppendLine($"### {subCategoryName} (Тестов: {subCategory.TestsCount})");
             // добавляем описание подкатегории, если оно определено в шаблоне
             if (subCategory.Description != null)
                 _body.AppendLine(subCategory.Description);
@@ -188,7 +188,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             // собираем readme
             var readme = new StringBuilder($"# {_name}")
                          .AppendLine()
-                         .AppendLine($"#### Всего тестов: {_testCount}")
+                         .AppendLine($"#### Всего тестов: {_testsCount}")
                          .AppendLine("  ")
                          .AppendLine("  ");
 
@@ -250,6 +250,12 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services
             _tableOfContent.AppendLine($"* [Ошибки формирования readme](#{errorsLink})");
             _body.AppendLine(@$"<a name=""{errorsLink}""></a>");
             _body.AppendLine("# Ошибки формирования readme");
+
+            if (_errors.HasTestCaseErrors)
+            {
+                _body.AppendLine("## Ошибки формирования тест кейсов:");
+                _body.AppendLine(_errors.TestCaseErrors);
+            }
 
             if (_errors.HasTemplateValidationErrors)
             {

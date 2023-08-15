@@ -1,6 +1,5 @@
-namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities
-{
-    using System.Collections.Generic;
+namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities;
+
     using System.Linq;
 
     /// <summary>
@@ -11,34 +10,60 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities
         /// <summary>
         ///     Имя отчёта - заголовок верхнего уровня
         /// </summary>
-        public string Name { get; set; } = default!;
+        public string Name { get; }
 
         /// <summary>
         ///     Общее описание отчёта
         /// </summary>
-        public string? Description { get; set; }
-
-        /// <summary>
-        ///     Общее количество тест-кейсов в отчёте
-        /// </summary>
-        public int TestCount => Categories.Sum(category => category.TestCount);
+        public string? Description { get; }
 
         /// <summary>
         ///     Категории тест-кейсов
         /// </summary>
-        public ReadmeCategory[] Categories { get; set; } = default!;
+        public ReadmeCategory[] Categories { get; }
 
         /// <summary>
-        ///     Ошибки валидации шаблона
+        ///     Ошибки валидации шаблона отчёта
         /// </summary>
-        public string? TemplateValidationErrors { get; set; }
+        private readonly string? _templateValidationErrors;
+
+        /// <summary>
+        ///     Ошибки формирования тест кейсов
+        /// </summary>
+        private readonly string? _testCaseErrors;
+
+        /// <summary>
+        ///     Ctor
+        /// </summary>
+        /// <param name="name">Имя отчёта</param>
+        /// <param name="description">Общее описание</param>
+        /// <param name="categories">Категории тесткейсов</param>
+        /// <param name="templateValidationErrors">Ошибки валидации шаблона</param>
+        /// <param name="testCaseErrors">Ошибки формирования тест кейсов</param>
+        public ReadmeReport(string name, 
+                            string? description, 
+                            ReadmeCategory[] categories, 
+                            string? templateValidationErrors, 
+                            string? testCaseErrors)
+        {
+            Name = name;
+            Description = description;
+            Categories = categories;
+            _templateValidationErrors = templateValidationErrors;
+            _testCaseErrors = testCaseErrors;
+        }
+
+        /// <summary>
+        ///     Общее количество тест-кейсов в отчёте
+        /// </summary>
+        public int TestsCount => Categories.Sum(category => category.TestsCount);
 
         /// <summary>
         ///     Возвращает ошибки формирования отчёта
         /// </summary>
-        public ReportErrors Validate()
+        public ReportErrors GetErrors()
         {
-            // тест-кейсы
+            // собираем все тест-кейсы
             var testCases = Categories.SelectMany(c => c.SubCategories.SelectMany(s => s.TestCases))
                                       .ToArray();
 
@@ -59,62 +84,11 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities
 
             return new ReportErrors
             {
-                TemplateValidationErrors = TemplateValidationErrors,
+                TestCaseErrors = _testCaseErrors,
+                TemplateValidationErrors = _templateValidationErrors,
                 EmptyIds = emptyIds,
                 EmptyDescriptions = emptyDescriptions,
                 DuplicateTestIds = duplicateTestIds
             };
         }
     }
-
-    /// <summary>
-    ///     Ошибки формирования отчёта
-    /// </summary>
-    public class ReportErrors
-    {
-        /// <summary>
-        ///     Ошибки валидации шаблона
-        /// </summary>
-        public string? TemplateValidationErrors { get; set; }
-
-        /// <summary>
-        ///     Тест кейсы с пустыми идентификаторами
-        /// </summary>
-        public TestCase[] EmptyIds { get; set; } = default!;
-
-        /// <summary>
-        ///     Тест кейсы с пустыми описаниями
-        /// </summary>
-        public TestCase[] EmptyDescriptions { get; set; } = default!;
-
-        /// <summary>
-        ///     Тест кейсы с дублированыными идентификаторами
-        /// </summary>
-        public Dictionary<string, TestCase[]> DuplicateTestIds { get; set; } = default!;
-
-        /// <summary>
-        ///     Возвращает true, если есть ошибки ошибки валидации шаблона
-        /// </summary>
-        public bool HasTemplateValidationErrors => string.IsNullOrWhiteSpace(TemplateValidationErrors) == false;
-        /// <summary>
-        ///     Возвращает true, если есть пустые идентификаторы тест-кейсов 
-        /// </summary>
-        public bool HasEmptyIds => EmptyIds.Any();
-        /// <summary>
-        ///     Возвращает true, если есть пустые описания тест кейсов 
-        /// </summary>
-        public bool HasEmptyDescriptions => EmptyDescriptions.Any();
-        /// <summary>
-        ///     Возвращает true, если есть дублирванные идентификаторы тест-кейсов 
-        /// </summary>
-        public bool HasDuplicateTestIds => DuplicateTestIds.Any();
-        
-        /// <summary>
-        ///     Возвращает true, если есть ошибки 
-        /// </summary>
-        public bool HasErrors => HasTemplateValidationErrors ||
-                                 HasEmptyIds ||
-                                 HasEmptyDescriptions ||
-                                 HasDuplicateTestIds;
-    }
-}

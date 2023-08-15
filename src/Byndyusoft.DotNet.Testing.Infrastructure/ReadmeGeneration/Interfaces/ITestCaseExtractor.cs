@@ -1,16 +1,15 @@
-namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Interfaces
-{
-    using System.Reflection;
-    using Entities;
+namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Interfaces;
 
+using System.Reflection;
+using Entities;
+
+/// <summary>
+///     Служба получения тест-кейсов из сборок с авто-тестами
+/// </summary>
+public interface ITestCaseExtractor
+{
     /// <summary>
-    ///     Служба получения тест-кейсов из сборок с авто-тестами
+    ///     Возвращает тест-кейсы из переданных сборок и ошибки формирования тест кейсов, если они были
     /// </summary>
-    public interface ITestCaseExtractor
-    {
-        /// <summary>
-        ///     Возвращает тест-кейсы из переданных сборок
-        /// </summary>
-        TestCase[] Get(params Assembly[] assemblies);
-    }
+    (TestCase[] TestCases, string? Errors) Get(params Assembly[] assemblies);
 }
