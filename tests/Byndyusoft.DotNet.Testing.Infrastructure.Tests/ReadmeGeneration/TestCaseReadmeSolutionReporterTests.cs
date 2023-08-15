@@ -1,3 +1,6 @@
+using Xunit;
+
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
 namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration;
 
 using System;
