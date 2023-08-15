@@ -11,7 +11,7 @@ using Xunit;
 [Collection("tests")]
 public class CheckIdIsPositiveExamplesTests
 {
-    //[Fact]
+    [Fact]
     public void CheckIdIsPositive_IdPositive_ShouldPass()
     {
         // Arrange
@@ -24,7 +24,7 @@ public class CheckIdIsPositiveExamplesTests
         // Assert
     }
 
-    //[Fact(Skip = "Этот тест должен падать")]
+    [Fact(Skip = "Этот тест должен падать")]
     public void CheckIdIsPositive_IdNegative_ShouldFail()
     {
         // Arrange

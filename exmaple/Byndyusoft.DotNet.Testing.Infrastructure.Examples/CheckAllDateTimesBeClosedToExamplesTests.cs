@@ -12,7 +12,7 @@ using Xunit;
 [Collection("tests")]
 public class CheckAllDateTimesBeClosedToExamplesTests
 {
-    //[Fact]
+    [Fact]
     public void CheckAllDateTimesBeClosedTo_AllDateTimeCloseToEachOtherWith5seconds_ShouldPass()
     {
         // Arrange
@@ -33,7 +33,7 @@ public class CheckAllDateTimesBeClosedToExamplesTests
         // Assert
     }
 
-    //[Fact(Skip = "Этот тест должен падать")]
+    [Fact(Skip = "Этот тест должен падать")]
     public void CheckAllDateTimesBeClosedTo__AllDateTimeNotCloseToEachOtherWith5seconds_ShouldFail()
     {
         // Arrange
