@@ -24,7 +24,7 @@ public class TestCaseReadmeSolutionReporterTests
         var reporter = TestCaseReadmeSolutionReporter.New();
 
         // ACT
-        var hasErrors = await reporter.Generate(Assembly.GetExecutingAssembly());
+        var hasErrors = await reporter.BuildAndSave(Assembly.GetExecutingAssembly());
 
         // ASSERT
         hasErrors.Should().BeTrue();
@@ -53,7 +53,7 @@ public class TestCaseReadmeSolutionReporterTests
         var reporter = TestCaseReadmeSolutionReporter.New(options);
 
         // ACT
-        var hasErrors = await reporter.Generate(Assembly.GetExecutingAssembly());
+        var hasErrors = await reporter.BuildAndSave(Assembly.GetExecutingAssembly());
 
         // ASSERT
         hasErrors.Should().BeTrue();

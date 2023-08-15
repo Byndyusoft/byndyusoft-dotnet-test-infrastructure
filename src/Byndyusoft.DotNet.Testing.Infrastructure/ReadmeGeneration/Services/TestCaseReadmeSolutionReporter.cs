@@ -57,7 +57,7 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
     /// <returns>
     ///     Возвращает true, если в отчёте есть ошибки
     /// </returns>
-    public async Task<bool> Generate(params Assembly[] assemblies)
+    public async Task<bool> BuildAndSave(params Assembly[] assemblies)
     {
         var (report, hasErrors) = await _testCaseReportBuilder.Build(assemblies);
         var currentDir = new DirectoryInfo(Environment.CurrentDirectory);

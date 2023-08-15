@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 public interface ITestCaseSolutionReporter
 {
     /// <summary>
-    ///     Генерирует документ readme по тест кейсам решения
+    ///     Генерирует документ readme по тест кейсам решения и сохраняет его на диск
     /// </summary>
     /// <returns>
     ///     Возвращает true, если в отчёте есть ошибки
     /// </returns>
-    Task<bool> Generate(params Assembly[] assemblies);
+    Task<bool> BuildAndSave(params Assembly[] assemblies);
 }
