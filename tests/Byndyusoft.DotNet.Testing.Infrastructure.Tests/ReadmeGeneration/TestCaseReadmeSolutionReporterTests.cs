@@ -1,6 +1,3 @@
-using Xunit;
-
-[assembly: CollectionBehavior(MaxParallelThreads = -1)]
 namespace Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration;
 
 using System;
@@ -49,9 +46,9 @@ public class TestCaseReadmeSolutionReporterTests
     {
         // ARRANGE
         var options = new TestCaseMarkdownReportingOptions
-                          {
-                              TemplatePath = Path.Combine("ReadmeGeneration", "TestCases", "WithTemplate", "README_TestCases_Template.md")
-                          };
+        {
+            TemplatePath = Path.Combine("ReadmeGeneration", "TestCases", "WithTemplate", "README_TestCases_Template.md")
+        };
 
         var reporter = TestCaseReadmeSolutionReporter.New(options);
 
@@ -84,17 +81,17 @@ public class SomeTestCase1 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId1",
-                       Description = @"
+        {
+            TestId = "TestId1",
+            Description = @"
 TestName1
 
 Description of test-case 1  
 bla-bla
 ",
-                       Category = "CategorySomeFeature",
-                       SubCategory = "SubCategorySomeScenarios"
-                   };
+            Category = "CategorySomeFeature",
+            SubCategory = "SubCategorySomeScenarios"
+        };
     }
 }
 
@@ -103,17 +100,17 @@ public class SomeTestCase2 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId2",
-                       Description = @"
+        {
+            TestId = "TestId2",
+            Description = @"
 TestName2
 
 Description of test-case 2  
 bla-bla
 ",
-                       Category = "CategorySomeFeature",
-                       SubCategory = "SubCategorySomeScenarios"
-                   };
+            Category = "CategorySomeFeature",
+            SubCategory = "SubCategorySomeScenarios"
+        };
     }
 }
 
@@ -122,17 +119,17 @@ public class SomeTestCase3 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId3",
-                       Description = @"
+        {
+            TestId = "TestId3",
+            Description = @"
 TestName3
 
 Description of test-case 3  
 bla-bla
 ",
-                       Category = "CategoryAnotherFeature",
-                       SubCategory = "Какая-то подкатегория на русском с пробелами"
-                   };
+            Category = "CategoryAnotherFeature",
+            SubCategory = "Какая-то подкатегория на русском с пробелами"
+        };
     }
 }
 
@@ -141,15 +138,15 @@ public class SomeTestCase4 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId4",
-                       Description = @"
+        {
+            TestId = "TestId4",
+            Description = @"
 TestName4
 
 Description of test-case 4  
 bla-bla
 "
-                   };
+        };
     }
 }
 
@@ -158,10 +155,10 @@ public class SomeTestCase5 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = string.Empty,
-                       Description = string.Empty
-                   };
+        {
+            TestId = string.Empty,
+            Description = string.Empty
+        };
     }
 }
 
@@ -170,10 +167,10 @@ public class SomeTestCase6 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = null,
-                       Description = null
-                   };
+        {
+            TestId = null,
+            Description = null
+        };
     }
 }
 
@@ -182,17 +179,17 @@ public class SomeTestCase7 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId1",
-                       Description = @"
+        {
+            TestId = "TestId1",
+            Description = @"
 TestName1
 
 Description of test-case 1  
 bla-bla
 ",
-                       Category = "CategorySomeFeature",
-                       SubCategory = "SubCategorySomeScenarios"
-                   };
+            Category = "CategorySomeFeature",
+            SubCategory = "SubCategorySomeScenarios"
+        };
     }
 }
 
@@ -201,17 +198,17 @@ public class SomeTestCase8 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId8",
-                       Description = @"
+        {
+            TestId = "TestId8",
+            Description = @"
 TestName8
 
 Description of test-case 1  
 bla-bla
 ",
-                       Category = "CategorySomeFeature",
-                       //SubCategory = "SubCategorySomeScenarios"
-                   };
+            Category = "CategorySomeFeature",
+            //SubCategory = "SubCategorySomeScenarios"
+        };
     }
 }
 
@@ -220,17 +217,17 @@ public class SomeTestCase9 : ITestCaseData<TestCaseItem>
     public TestCaseItem Get()
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId9",
-                       Description = @"
+        {
+            TestId = "TestId9",
+            Description = @"
 TestName9
 
 Description of test-case 9  
 bla-bla
 ",
-                       Category = "CategorySomeFeature",
-                       SubCategory = "SubCategorySomeScenarios"
-                   };
+            Category = "CategorySomeFeature",
+            SubCategory = "SubCategorySomeScenarios"
+        };
     }
 }
 
@@ -257,17 +254,17 @@ public class SomeTestCase10
     public TestCaseItem GetWithParamaters(int i, DateTime d, TestCaseItem tci, object o)
     {
         return new TestCaseItem
-                   {
-                       TestId = "TestId10",
-                       Description = @"
+        {
+            TestId = "TestId10",
+            Description = @"
 TestName10
 
 Description of test-case 10  
 bla-bla
 ",
-                       Category = "CategorySomeFeature",
-                       SubCategory = "SubCategorySomeScenarios"
-                   };
+            Category = "CategorySomeFeature",
+            SubCategory = "SubCategorySomeScenarios"
+        };
     }
 }
 
@@ -281,18 +278,18 @@ public class SomeTests
         var testId2 = "TestId11";
         var testId3 = "TestId11";
         var testCase = new TestCaseItem
-                           {
-                               TestId = testId3,
-                               Description = @"
+        {
+            TestId = testId3,
+            Description = @"
 TestName11
 
 Description of test-case 11 
 bla-bla
 ",
-                               Category = "CategorySomeFeature",
-                               SubCategory = "SubCategorySomeScenarios"
+            Category = "CategorySomeFeature",
+            SubCategory = "SubCategorySomeScenarios"
 
-                           };
+        };
 
         //Act
 
