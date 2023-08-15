@@ -13,6 +13,11 @@ using Interfaces;
 /// </summary>
 public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
 {
+    /// <summary>
+    ///     Расширение файла решения 
+    /// </summary>
+    const string SolutionExtenstion = "sln";
+
     private readonly ITestCaseReportBuilder _testCaseReportBuilder;
 
     /// <summary>
@@ -73,21 +78,21 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
     /// <summary>
     ///     Возвращает корневой каталог решения (solution'а) 
     /// </summary>
-    /// <param name="dir">Подкаталог решения</param>
+    /// <param name="solutionSubDir">Подкаталог решения</param>
     /// <remarks>
     ///     Рекурсивно ищет корневой каталог решения среди переданного каталога и его родительских каталогов
     /// </remarks>
     /// <returns>
     ///     Возвращает null, если найти корневой каталог решения не удалось
     /// </returns>
-    private DirectoryInfo? GetSolutionDirectory(DirectoryInfo? dir)
+    private DirectoryInfo? GetSolutionDirectory(DirectoryInfo? solutionSubDir)
     {
-        if (dir == null)
+        if (solutionSubDir is null)
             return null;
 
-        if (dir.GetFiles().Any(f => string.Equals(f.Extension.TrimStart('.'), "sln", StringComparison.OrdinalIgnoreCase)))
-            return dir;
+        if (solutionSubDir.GetFiles().Any(f => string.Equals(f.Extension.TrimStart('.'), SolutionExtenstion, StringComparison.OrdinalIgnoreCase)))
+            return solutionSubDir;
             
-        return GetSolutionDirectory(dir.Parent);
+        return GetSolutionDirectory(solutionSubDir.Parent);
     }
 }

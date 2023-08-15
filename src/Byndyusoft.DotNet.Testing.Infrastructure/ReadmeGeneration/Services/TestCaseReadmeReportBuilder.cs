@@ -36,25 +36,31 @@ internal sealed class TestCaseReadmeReportBuilder : ITestCaseReportBuilder
         var markupBuilder = new ReadmeMarkupBuilder(readmeReport);
 
         // идём по категориям отчёта
-        foreach (var category in readmeReport.Categories
-                                             .OrderBy(c => c.Order)
-                                             .ThenBy(c => c.Name))
+        var categories = readmeReport.Categories
+                                     .OrderBy(c => c.Order)
+                                     .ThenBy(c => c.Name);
+
+        foreach (var category in categories)
         {
             // добавляем разметку категории в отчёт
             markupBuilder.AddCategory(category);
 
             // идём по подкатегориям категории
-            foreach (var subCategory in category.SubCategories
-                                                .OrderBy(s => s.Order)
-                                                .ThenBy(c => c.Name))
+            var subCategories = category.SubCategories
+                                        .OrderBy(s => s.Order)
+                                        .ThenBy(c => c.Name);
+
+            foreach (var subCategory in subCategories)
             {
                 // добавляем разметку подкатегории в отчёт
                 markupBuilder.AddSubCategory(category, subCategory);
 
-                // идём по тесткейсам категории
-                foreach (var testCase in subCategory.TestCases
-                                                    .OrderBy(t => t.Name)
-                                                    .ThenBy(t => t.TestCaseType.FullName))
+                // идём по тесткейсам
+                var testCases = subCategory.TestCases
+                                                   .OrderBy(t => t.Name)
+                                                   .ThenBy(t => t.TestCaseType.FullName);
+
+                foreach (var testCase in testCases)
                 {
                     // добавляем разметку тесткейса в отчёт
                     markupBuilder.AddTestCase(testCase);

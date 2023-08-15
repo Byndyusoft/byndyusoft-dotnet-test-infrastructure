@@ -1,4 +1,4 @@
-namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services;
+namespace Byndyusoft.DotNet.Testing.Infrastructure.Extensions;
 
 using System;
 using System.Text;

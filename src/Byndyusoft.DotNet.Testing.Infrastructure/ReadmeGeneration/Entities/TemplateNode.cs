@@ -3,6 +3,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Byndyusoft.DotNet.Testing.Infrastructure.Extensions;
 using Services;
 using static System.Int32;
 
@@ -63,7 +64,7 @@ internal class TemplateNode
     ///     Дочерние ноды 
     /// </summary>
     /// <remarks>
-    ///     Для нод подкатегорий всегда пустой словарь
+    ///     Для нод подкатегорий всегда пустой список
     /// </remarks>
     private readonly List<TemplateNode> _children = new List<TemplateNode>();
 

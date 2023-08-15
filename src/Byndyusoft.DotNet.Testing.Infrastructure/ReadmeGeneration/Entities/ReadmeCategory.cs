@@ -21,7 +21,7 @@ internal sealed class ReadmeCategory
     public int TestsCount { get; set; }
 
     /// <summary>
-    ///     Порядковая метка категории в шаблоне
+    ///     Порядковый номер категории в шаблоне
     /// </summary>
     public int Order { get; set; }
 

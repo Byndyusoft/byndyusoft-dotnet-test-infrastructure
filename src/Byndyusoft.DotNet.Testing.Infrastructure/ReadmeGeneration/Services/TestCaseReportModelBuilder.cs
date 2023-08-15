@@ -56,23 +56,7 @@ internal sealed class TestCaseReportModelBuilder : ITestCaseReportModelBuilder
     {
         // получаем категории
         var categories = testCases.GroupBy(testCase => testCase.Category)
-                                  .Select(category => new ReadmeCategory
-                                                          {
-                                                              Name = category.Key,
-                                                              Description = template.GetCategoryDescription(category.Key),
-                                                              TestsCount = category.Count(),
-                                                              Order = template.GetCategoryOrder(category.Key),
-                                                              SubCategories = category.GroupBy(c => c.SubCategory)
-                                                                                      .Select(subCategory => new ReadmeSubCategory
-                                                                                                                 {
-                                                                                                                     Name = subCategory.Key,
-                                                                                                                     Description = template.GetSubCategoryDescription(category.Key, subCategory.Key),
-                                                                                                                     TestsCount = subCategory.Count(),
-                                                                                                                     Order = template.GetSubCategoryOrder(category.Key, subCategory.Key),
-                                                                                                                     TestCases = subCategory.ToArray()
-                                                                                                                 })
-                                                                                      .ToArray()
-                                                          })
+                                  .Select(category => CreateCategory(category, template))
                                   .ToArray();
 
         // отчёт
@@ -80,6 +64,46 @@ internal sealed class TestCaseReportModelBuilder : ITestCaseReportModelBuilder
 
         return report;
     }
+
+    /// <summary>
+    ///     Возвращает категорию тест кейсов
+    /// </summary>
+    /// <param name="category">Группа тест кейсов категории</param>
+    /// <param name="template">Шаблон</param>
+    private ReadmeCategory CreateCategory(IGrouping<string?, TestCase> category, TemplateNode template)
+    {
+        return new ReadmeCategory
+        {
+            Name = category.Key,
+            Description = template.GetCategoryDescription(category.Key),
+            TestsCount = category.Count(),
+            Order = template.GetCategoryOrder(category.Key),
+            SubCategories = category.GroupBy(c => c.SubCategory)
+                                    .Select(subCategory => CreateSubCategory(subCategory, category.Key, template))
+                                    .ToArray()
+        };
+    }
+
+    /// <summary>
+    ///     Возвращает подкатегорию тест кейсов
+    /// </summary>
+    /// <param name="subCategory">Группа тест кейсов подкатегории</param>
+    /// <param name="categoryName">Имя родительской категории</param>
+    /// <param name="template">Шаблон</param>
+    private ReadmeSubCategory CreateSubCategory(IGrouping<string?, TestCase> subCategory,
+                                                string? categoryName,
+                                                TemplateNode template)
+    {
+        return new ReadmeSubCategory
+        {
+            Name = subCategory.Key,
+            Description = template.GetSubCategoryDescription(categoryName, subCategory.Key),
+            TestsCount = subCategory.Count(),
+            Order = template.GetSubCategoryOrder(categoryName, subCategory.Key),
+            TestCases = subCategory.ToArray()
+        };
+    }
+
 
     /// <summary>
     ///     Возвращает шаблон отчёта

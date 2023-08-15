@@ -16,7 +16,7 @@ internal sealed class ReadmeSubCategory
     public string? Description { get; set; }
 
     /// <summary>
-    ///     Порядковая метка подкатегории в категории
+    ///     Порядковый номер подкатегории в категории
     /// </summary>
     public int Order { get; set; }
 

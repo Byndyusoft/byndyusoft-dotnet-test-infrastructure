@@ -2,6 +2,7 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Services;
 
 using System.Linq;
 using System.Text;
+using Byndyusoft.DotNet.Testing.Infrastructure.Extensions;
 using Entities;
 
 /// <summary>
@@ -28,7 +29,7 @@ internal sealed class ReadmeMarkupBuilder
     private readonly string _name;
 
     /// <summary>
-    ///     Ссылка на раздел с общим описание отчёта
+    ///     Общее описание отчёта
     /// </summary>
     private readonly string? _description;
 
