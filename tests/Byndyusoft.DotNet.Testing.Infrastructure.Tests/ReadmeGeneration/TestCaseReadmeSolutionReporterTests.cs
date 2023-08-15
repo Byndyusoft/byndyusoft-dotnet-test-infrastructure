@@ -269,6 +269,8 @@ bla-bla
     }
 }
 
+
+[Collection("tests")]
 public class SomeTests
 {
     [Fact]
