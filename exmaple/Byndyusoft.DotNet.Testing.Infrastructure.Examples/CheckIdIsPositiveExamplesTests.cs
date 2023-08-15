@@ -8,7 +8,6 @@ using Xunit;
 /// <summary>
 ///     Примеры тестов с использованием <see cref="EquivalencyAssertionOptionsExtensions.CheckIdIsPositive"/>
 /// </summary>
-[Collection("tests")]
 public class CheckIdIsPositiveExamplesTests
 {
     [Fact]

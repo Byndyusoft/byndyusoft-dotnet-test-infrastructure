@@ -17,7 +17,11 @@ public class TestCase
     ///     Имя тест кейса
     /// </summary>
     public string? Name => (Description ?? string.Empty)
-                           .Split(new [] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
+#if NETSTANDARD
+                           .Split(new []{ Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
+#else
+                           .Split(Environment.NewLine)
+#endif
                            .FirstOrDefault(x => string.IsNullOrWhiteSpace(x) == false);
 
     /// <summary>

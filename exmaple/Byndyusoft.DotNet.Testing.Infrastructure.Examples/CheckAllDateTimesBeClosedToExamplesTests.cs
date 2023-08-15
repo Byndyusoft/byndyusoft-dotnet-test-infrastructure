@@ -9,7 +9,6 @@ using Xunit;
 /// <summary>
 ///     Примеры тестов для <see cref="EquivalencyAssertionOptionsExtensions.CheckAllDateTimesBeClosedTo"/>
 /// </summary>
-[Collection("tests")]
 public class CheckAllDateTimesBeClosedToExamplesTests
 {
     [Fact]

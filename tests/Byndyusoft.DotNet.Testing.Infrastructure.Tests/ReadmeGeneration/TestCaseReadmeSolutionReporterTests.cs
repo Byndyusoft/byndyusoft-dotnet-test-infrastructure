@@ -15,7 +15,6 @@ using Xunit;
 /// <summary>
 ///     Тесты на генерацию тестовой документации в readme
 /// </summary>
-[Collection("tests")]
 public class TestCaseReadmeSolutionReporterTests
 {
     [Fact]
@@ -269,8 +268,6 @@ bla-bla
     }
 }
 
-
-[Collection("tests")]
 public class SomeTests
 {
     [Fact]

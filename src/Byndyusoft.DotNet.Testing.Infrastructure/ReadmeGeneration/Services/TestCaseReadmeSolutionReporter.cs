@@ -61,7 +61,11 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
             throw new Exception("Корневой каталог решения (solution'а) не найден");
 
         var reportPath = Path.Combine(solutionDir.FullName, ReadmeName);
+#if NETSTANDARD
         File.WriteAllText(reportPath, report);
+#else
+        await File.WriteAllTextAsync(reportPath, report);
+#endif
             
         return hasErrors;
     }
