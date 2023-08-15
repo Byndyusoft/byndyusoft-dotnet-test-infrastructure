@@ -14,7 +14,7 @@ using Xunit;
 /// <summary>
 ///     Служба получения тест-кейсов из сборок с авто-тестами
 /// </summary>
-public sealed class TestCasesExtractor : ITestCaseExtractor
+internal sealed class TestCasesExtractor : ITestCaseExtractor
 {
     /// <summary>
     ///     Возвращает тест-кейсы из переданных сборок и ошибки формирования тест кейсов, если они были

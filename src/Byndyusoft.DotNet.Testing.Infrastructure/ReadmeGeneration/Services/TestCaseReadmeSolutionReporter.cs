@@ -24,7 +24,7 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
     ///     Ctor
     /// </summary>
     /// <param name="testCaseReportBuilder">Служба формирования отчёта</param>
-    public TestCaseReadmeSolutionReporter(ITestCaseReportBuilder testCaseReportBuilder)
+    private TestCaseReadmeSolutionReporter(ITestCaseReportBuilder testCaseReportBuilder)
     {
         _testCaseReportBuilder = testCaseReportBuilder;
     }
