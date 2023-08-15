@@ -8,6 +8,7 @@ using Moq;
 using Xunit;
 using Xunit.Sdk;
 
+[Collection("tests")]
 public class ShouldTests
 {
     private readonly Mock<ICollection<TestEntity>> _mock;
