@@ -4,7 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-	<IsTestProject>false</IsTestProject>
 
     <AssemblyName>Byndyusoft.DotNet.Testing.Infrastructure.Examples</AssemblyName>
   </PropertyGroup>
