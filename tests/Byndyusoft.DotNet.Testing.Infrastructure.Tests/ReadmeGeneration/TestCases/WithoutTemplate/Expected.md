@@ -216,7 +216,7 @@ bla-bla
 ## Ошибки формирования тест кейсов:
 * Не удалось создать тест кейс с помощью метода Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.FailToConstructTestCase.Get: Exception has been thrown by the target of an invocation.
 * Метод Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.FailToConstructTestCase.GetNull вернул пустой тест кейс
-* Не удалось создать тест кейс с помощью метода Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.FailToConstructTestCase.GetActivatorCantCreateThisOne: Cannot create an instance of an interface.
+* Не удалось создать тест кейс с помощью метода Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.FailToConstructTestCase.GetActivatorCantCreateThisOne: Cannot dynamically create an instance of type 'System.Collections.Generic.IEnumerable`1[System.String]'. Reason: Cannot create an instance of an interface.
 ## Пустые идентификаторы в тест кейсах:
 * Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase6
 * Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase5
