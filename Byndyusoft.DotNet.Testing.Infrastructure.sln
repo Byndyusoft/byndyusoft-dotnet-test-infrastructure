@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D56D543D-CA8A-4F0F-A69D-34DF233D3346}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		icon.png = icon.png
+		LICENSE = LICENSE
 		README.md = README.md
 		README_TestCases.md = README_TestCases.md
 	EndProjectSection
@@ -15,6 +20,23 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.DotNet.Testing.Infrastructure.Tests", "tests\Byndyusoft.DotNet.Testing.Infrastructure.Tests\Byndyusoft.DotNet.Testing.Infrastructure.Tests.csproj", "{0F2613CD-54EB-4914-8C49-CA8783954319}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Byndyusoft.DotNet.Testing.Infrastructure.Examples", "exmaple\Byndyusoft.DotNet.Testing.Infrastructure.Examples\Byndyusoft.DotNet.Testing.Infrastructure.Examples.csproj", "{AEF205F9-CF14-4B30-986C-2E759FBB527F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{32230BE0-1D24-49BB-AF19-DEA616DE5495}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{977BED9A-A372-44CC-859F-E13DE342B93B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{6051DCC2-13F4-4F68-A7FB-18AF4DF44A0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{863360DE-416E-4D36-B434-D089078F1D4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{67B1999B-6450-4CBA-8634-B5C1D9A95AEA}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\pushOrPullRequest.yml = .github\workflows\pushOrPullRequest.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +59,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4BF58468-C533-4DB8-BF3A-9511E5F8052D} = {32230BE0-1D24-49BB-AF19-DEA616DE5495}
+		{0F2613CD-54EB-4914-8C49-CA8783954319} = {977BED9A-A372-44CC-859F-E13DE342B93B}
+		{AEF205F9-CF14-4B30-986C-2E759FBB527F} = {6051DCC2-13F4-4F68-A7FB-18AF4DF44A0E}
+		{67B1999B-6450-4CBA-8634-B5C1D9A95AEA} = {863360DE-416E-4D36-B434-D089078F1D4F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F584566C-1484-44B5-9446-634BB80C02D9}
