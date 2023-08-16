@@ -13,14 +13,14 @@ using Interfaces;
 internal sealed class TestCaseReportModelBuilder : ITestCaseReportModelBuilder
 {
     private readonly ITestCaseExtractor _testCaseExtractor;
-    private readonly TestCaseMarkdownReportingOptions _reportingOptions;
+    private readonly TestCaseReportingOptions _reportingOptions;
 
     /// <summary>
     ///     Ctor
     /// </summary>
     /// <param name="testCaseExtractor">Служба извлечения тест кейсов</param>
     /// <param name="reportingOptions">Настройки построения отчёта</param>
-    public TestCaseReportModelBuilder(ITestCaseExtractor testCaseExtractor, TestCaseMarkdownReportingOptions reportingOptions)
+    public TestCaseReportModelBuilder(ITestCaseExtractor testCaseExtractor, TestCaseReportingOptions reportingOptions)
     {
         _testCaseExtractor = testCaseExtractor;
         _reportingOptions = reportingOptions;

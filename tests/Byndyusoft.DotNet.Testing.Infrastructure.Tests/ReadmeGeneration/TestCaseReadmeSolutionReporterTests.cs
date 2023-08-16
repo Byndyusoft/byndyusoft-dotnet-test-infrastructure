@@ -24,10 +24,10 @@ public class TestCaseReadmeSolutionReporterTests
         var reporter = TestCaseReadmeSolutionReporter.New();
 
         // ACT
-        var hasErrors = await reporter.BuildAndSave(Assembly.GetExecutingAssembly());
+        var reportConsistency = await reporter.AddReport(Assembly.GetExecutingAssembly());
 
         // ASSERT
-        hasErrors.Should().BeTrue();
+        reportConsistency.Should().Be(ReportConsistency.Inconsistent);
 
         var expectedReadme = new FileInfo(Path.Combine("ReadmeGeneration", "TestCases", "WithoutTemplate", "Expected.md"));
         var expectedContent = await File.ReadAllTextAsync(expectedReadme.FullName);
@@ -45,7 +45,7 @@ public class TestCaseReadmeSolutionReporterTests
     public async Task Generate_FromCurrentDomain_WithTemplate_ShouldGenerateReadmeInSolutionRoot()
     {
         // ARRANGE
-        var options = new TestCaseMarkdownReportingOptions
+        var options = new TestCaseReportingOptions
         {
             TemplatePath = Path.Combine("ReadmeGeneration", "TestCases", "WithTemplate", "README_TestCases_Template.md")
         };
@@ -53,10 +53,10 @@ public class TestCaseReadmeSolutionReporterTests
         var reporter = TestCaseReadmeSolutionReporter.New(options);
 
         // ACT
-        var hasErrors = await reporter.BuildAndSave(Assembly.GetExecutingAssembly());
+        var reportConsistency = await reporter.AddReport(Assembly.GetExecutingAssembly());
 
         // ASSERT
-        hasErrors.Should().BeTrue();
+        reportConsistency.Should().Be(ReportConsistency.Inconsistent);
 
         var expectedReadme = new FileInfo(Path.Combine("ReadmeGeneration", "TestCases", "WithTemplate", "Expected.md"));
         var expectedContent = await File.ReadAllTextAsync(expectedReadme.FullName);

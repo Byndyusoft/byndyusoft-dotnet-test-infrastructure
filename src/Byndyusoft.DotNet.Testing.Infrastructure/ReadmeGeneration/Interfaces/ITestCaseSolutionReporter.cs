@@ -2,6 +2,8 @@ namespace Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Interfaces;
 
 using System.Reflection;
 using System.Threading.Tasks;
+using Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities;
+using Services;
 
 /// <summary>
 ///     Служба создания отчёта по тест кейсам решения
@@ -9,10 +11,10 @@ using System.Threading.Tasks;
 public interface ITestCaseSolutionReporter
 {
     /// <summary>
-    ///     Генерирует документ readme по тест кейсам решения и сохраняет его на диск
+    ///     Добавляет в корень решения отчёт по тест кейсам
     /// </summary>
     /// <returns>
-    ///     Возвращает true, если в отчёте есть ошибки
+    ///     Возвращает статус конситентности отчёта
     /// </returns>
-    Task<bool> BuildAndSave(params Assembly[] assemblies);
+    Task<ReportConsistency> AddReport(params Assembly[] assemblies);
 }
