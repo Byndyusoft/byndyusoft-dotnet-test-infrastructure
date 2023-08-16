@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Byndyusoft.DotNet.Testing.Infrastructure.ReadmeGeneration.Entities;
 using Entities;
 using Interfaces;
 
@@ -19,6 +20,7 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
     const string SolutionExtenstion = "sln";
 
     private readonly ITestCaseReportBuilder _testCaseReportBuilder;
+    private readonly TestCaseReportingOptions _options;
 
     /// <summary>
     ///     Имя файла для генерации документа по умолчанию
@@ -29,18 +31,21 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
     ///     Ctor
     /// </summary>
     /// <param name="testCaseReportBuilder">Служба формирования отчёта</param>
-    private TestCaseReadmeSolutionReporter(ITestCaseReportBuilder testCaseReportBuilder)
+    /// <param name="options">Настройки создания шаблона</param>
+    private TestCaseReadmeSolutionReporter(ITestCaseReportBuilder testCaseReportBuilder,
+                                           TestCaseReportingOptions options)
     {
         _testCaseReportBuilder = testCaseReportBuilder;
+        _options = options;
     }
 
     /// <summary>
     ///     Возвращает новый экземпляр службы
     /// </summary>
     /// <param name="options">Настройки генерации markdown</param>
-    public static TestCaseReadmeSolutionReporter New(TestCaseMarkdownReportingOptions options)
+    public static TestCaseReadmeSolutionReporter New(TestCaseReportingOptions options)
     {
-        return new TestCaseReadmeSolutionReporter(new TestCaseReadmeReportBuilder(new TestCaseReportModelBuilder(new TestCasesExtractor(), options)));
+        return new TestCaseReadmeSolutionReporter(new TestCaseReadmeReportBuilder(new TestCaseReportModelBuilder(new TestCasesExtractor(), options)), options);
     }
 
     /// <summary>
@@ -48,16 +53,16 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
     /// </summary>
     public static TestCaseReadmeSolutionReporter New()
     {
-        return New(new TestCaseMarkdownReportingOptions());
+        return New(new TestCaseReportingOptions());
     }
 
     /// <summary>
-    ///     Генерирует документ readme по тест кейсам решения
+    ///     Добавляет в корень решения readme отчёт по тест кейсам
     /// </summary>
     /// <returns>
-    ///     Возвращает true, если в отчёте есть ошибки
+    ///     Возвращает статус конситентности отчёта
     /// </returns>
-    public async Task<bool> BuildAndSave(params Assembly[] assemblies)
+    public async Task<ReportConsistency> AddReport(params Assembly[] assemblies)
     {
         var (report, hasErrors) = await _testCaseReportBuilder.Build(assemblies);
         var currentDir = new DirectoryInfo(Environment.CurrentDirectory);
@@ -65,14 +70,14 @@ public sealed class TestCaseReadmeSolutionReporter : ITestCaseSolutionReporter
         if (solutionDir is null)
             throw new Exception("Корневой каталог решения (solution'а) не найден");
 
-        var reportPath = Path.Combine(solutionDir.FullName, ReadmeName);
+        var reportPath = Path.Combine(solutionDir.FullName, _options.ReportName ?? ReadmeName);
 #if NETSTANDARD
         File.WriteAllText(reportPath, report);
 #else
         await File.WriteAllTextAsync(reportPath, report);
 #endif
             
-        return hasErrors;
+        return hasErrors? ReportConsistency.Inconsistent: ReportConsistency.Consistent;
     }
 
     /// <summary>
