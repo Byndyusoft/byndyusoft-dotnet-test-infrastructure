@@ -199,16 +199,16 @@ bla-bla
 ```csharp
 
 [Fact]
-public async Task Generate_FromCurrentDomain_ShouldGenerateReadmeInSolutionRoot()
+public async Task AddReport_FromCurrentDomain_ShouldAddReadmeInSolutionRoot()
 {
     // ARRANGE
     var reporter = TestCaseReadmeSolutionReporter.New();
 
     // ACT
-    var hasErrors = await reporter.Generate(Assembly.GetExecutingAssembly());
+    var reportConsistency = await reporter.AddReport(Assembly.GetExecutingAssembly());
 
     // ASSERT
-    hasErrors.Should().BeFalse();
+    reportConsistency.Should().Be(ReportConsistency.Consistent);
 }
 
 ```
@@ -268,10 +268,10 @@ public async Task Generate_FromCurrentDomain_WithTemplate_ShouldGenerateReadmeIn
     var reporter = TestCaseReadmeSolutionReporter.New(options);
 
     // ACT
-    var hasErrors = await reporter.Generate(Assembly.GetExecutingAssembly());
+    var reportConsistency = await reporter.AddReport(Assembly.GetExecutingAssembly());
 
     // ASSERT
-    hasErrors.Should().BeFalse();
+    reportConsistency.Should().Be(ReportConsistency.Consistent);
 }
 
 ```
