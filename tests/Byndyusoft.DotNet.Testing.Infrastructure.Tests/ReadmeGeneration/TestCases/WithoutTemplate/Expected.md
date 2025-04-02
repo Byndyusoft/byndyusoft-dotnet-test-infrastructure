@@ -25,7 +25,7 @@
 * [Ошибки формирования readme](#building-readme-report-errors-link-should-never-duplicate)
 
 ---
-<a name="readme-report-legend-link-should-never-duplicate"></a>
+<a id="readme-report-legend-link-should-never-duplicate"></a>
 # Условные обозначения
 **Наименование тест-кейсов:**  
 **(А)** - Авто-тест. Тест-кейс автоматизирован (для тест-кейса есть тестовый метод)   
@@ -38,13 +38,13 @@
 **Description** - Описание тест-кейса. Из описания берётся первая непустая строка, которая используется в качестве названия тест-кейса.
 
 ---
-<a name="Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ=="></a>
+<a id="Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ=="></a>
 ## CategoryAnotherFeature (Тестов: 1)
 
-<a name="Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjyDQvdCwINGA0YPRgdGB0LrQvtC8INGBINC/0YDQvtCx0LXQu9Cw0LzQuA=="></a>
+<a id="Q2F0ZWdvcnlBbm90aGVyRmVhdHVyZQ==-0JrQsNC60LDRjy3RgtC+INC/0L7QtNC60LDRgtC10LPQvtGA0LjRjyDQvdCwINGA0YPRgdGB0LrQvtC8INGBINC/0YDQvtCx0LXQu9Cw0LzQuA=="></a>
 ### Какая-то подкатегория на русском с пробелами (Тестов: 1)
 
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase3"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase3"></a>
 #### (A) TestName3
   
 **TestId:** TestId3  
@@ -59,13 +59,13 @@ Description of test-case 3
 bla-bla
 
 ---
-<a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ=="></a>
+<a id="Q2F0ZWdvcnlTb21lRmVhdHVyZQ=="></a>
 ## CategorySomeFeature (Тестов: 7)
 
-<a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z"></a>
+<a id="Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-U3ViQ2F0ZWdvcnlTb21lU2NlbmFyaW9z"></a>
 ### SubCategorySomeScenarios (Тестов: 6)
 
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase1"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase1"></a>
 #### (A) TestName1
   
 **TestId:** TestId1  
@@ -80,7 +80,7 @@ Description of test-case 1
 bla-bla
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase7"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase7"></a>
 #### (P) TestName1
   
 **TestId:** TestId1  
@@ -95,7 +95,7 @@ Description of test-case 1
 bla-bla
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase10"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase10"></a>
 #### (P) TestName10
   
 **TestId:** TestId10  
@@ -110,7 +110,7 @@ Description of test-case 10
 bla-bla
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.TestCaseItem"></a>
 #### (A) TestName11
   
 **TestId:** TestId11  
@@ -125,7 +125,7 @@ Description of test-case 11
 bla-bla
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase2"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase2"></a>
 #### (A) TestName2
   
 **TestId:** TestId2  
@@ -140,7 +140,7 @@ Description of test-case 2
 bla-bla
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase9"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase9"></a>
 #### (P) TestName9
   
 **TestId:** TestId9  
@@ -155,10 +155,10 @@ Description of test-case 9
 bla-bla
 
 ---
-<a name="Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-Tm9TdWJDYXRlZ29yeQ=="></a>
+<a id="Q2F0ZWdvcnlTb21lRmVhdHVyZQ==-Tm9TdWJDYXRlZ29yeQ=="></a>
 ### NoSubCategory (Тестов: 1)
 
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase8"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase8"></a>
 #### (P) TestName8
   
 **TestId:** TestId8  
@@ -173,10 +173,10 @@ Description of test-case 1
 bla-bla
 
 ---
-<a name="Tm9DYXRlZ29yeQ=="></a>
+<a id="Tm9DYXRlZ29yeQ=="></a>
 ## NoCategory (Тестов: 3)
 
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase5"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase5"></a>
 #### (P) <ТЕСТ-КЕЙС БЕЗ НАЗВАНИЯ>
   
 **TestId:** <ТЕСТ-КЕЙС БЕЗ ИД>  
@@ -186,7 +186,7 @@ bla-bla
 **Description:**  
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase6"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase6"></a>
 #### (P) <ТЕСТ-КЕЙС БЕЗ НАЗВАНИЯ>
   
 **TestId:** <ТЕСТ-КЕЙС БЕЗ ИД>  
@@ -196,7 +196,7 @@ bla-bla
 **Description:**  
 
 ---
-<a name="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase4"></a>
+<a id="Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.SomeTestCase4"></a>
 #### (A) TestName4
   
 **TestId:** TestId4  
@@ -211,7 +211,7 @@ Description of test-case 4
 bla-bla
 
 ---
-<a name="building-readme-report-errors-link-should-never-duplicate"></a>
+<a id="building-readme-report-errors-link-should-never-duplicate"></a>
 # Ошибки формирования readme
 ## Ошибки формирования тест кейсов:
 * Не удалось создать тест кейс с помощью метода Byndyusoft.Byndyusoft.DotNet.Testing.Infrastructure.Tests.ReadmeGeneration.FailToConstructTestCase.Get: Exception has been thrown by the target of an invocation.
