@@ -2,7 +2,6 @@
 
   <PropertyGroup>
 	  <RootNamespace>Byndyusoft.DotNet.Testing.Infrastructure</RootNamespace>
-	  <Version>1.3.2</Version>
 	  <PackageId>Byndyusoft.DotNet.Testing.Infrastructure</PackageId>
 	  <Title>Byndyusoft.DotNet.Testing.Infrastructure</Title>
 	  <Authors>Byndyusoft</Authors>
