@@ -107,7 +107,7 @@ internal sealed class ReadmeMarkupBuilder
         _tableOfContent.AppendLine($"* [{categoryName} (Тестов: {category.TestsCount})](#{categoryName.ToBase64()})");
 
         // добавляем категорию в тело
-        _body.AppendLine(@$"<a name=""{categoryName.ToBase64()}""></a>");
+        _body.AppendLine(@$"<a id=""{categoryName.ToBase64()}""></a>");
         _body.AppendLine($"## {categoryName} (Тестов: {category.TestsCount})");
             
         // добавляем описание категории, если оно определено в шаблоне
@@ -138,7 +138,7 @@ internal sealed class ReadmeMarkupBuilder
         _tableOfContent.AppendLine($"  * [{subCategoryName} (Тестов: {subCategory.TestsCount})](#{categoryName.ToBase64()}-{subCategoryName.ToBase64()})");
 
         // добавляем подкатегорию в тело
-        _body.AppendLine(@$"<a name=""{categoryName.ToBase64()}-{subCategoryName.ToBase64()}""></a>");
+        _body.AppendLine(@$"<a id=""{categoryName.ToBase64()}-{subCategoryName.ToBase64()}""></a>");
         _body.AppendLine($"### {subCategoryName} (Тестов: {subCategory.TestsCount})");
         // добавляем описание подкатегории, если оно определено в шаблоне
         if (subCategory.Description != null)
@@ -169,7 +169,7 @@ internal sealed class ReadmeMarkupBuilder
         _tableOfContent.AppendLine($"{intend}* [{testName}](#{testCase.TestCaseType.FullName})  ");
 
         // добавляем описание тест кейса в тело
-        _body.AppendLine(@$"<a name=""{testCase.TestCaseType.FullName}""></a>");
+        _body.AppendLine(@$"<a id=""{testCase.TestCaseType.FullName}""></a>");
         _body.AppendLine($"#### {testName}");
         _body.AppendLine("  ");
         _body.AppendLine($"**TestId:** {testId}  ");
@@ -206,7 +206,7 @@ internal sealed class ReadmeMarkupBuilder
         // добавляем ссылку на общее описание, если оно определено в шаблоне
         if (ReportHasDescription)
         {
-            readme.AppendLine(@$"<a name=""{_descriptionLink}""></a>");
+            readme.AppendLine(@$"<a id=""{_descriptionLink}""></a>");
             readme.AppendLine("# Описание");
             readme.AppendLine(_description);
             readme.AppendLine("---");
@@ -225,7 +225,7 @@ internal sealed class ReadmeMarkupBuilder
     {
         var legendLink = "readme-report-legend-link-should-never-duplicate";
         _tableOfContent.AppendLine($"* [Условные обозначения](#{legendLink})");
-        _body.AppendLine(@$"<a name=""{legendLink}""></a>");
+        _body.AppendLine(@$"<a id=""{legendLink}""></a>");
         _body.AppendLine("# Условные обозначения");
 
         _body.AppendLine("**Наименование тест-кейсов:**  ");
@@ -249,7 +249,7 @@ internal sealed class ReadmeMarkupBuilder
     {
         var errorsLink = "building-readme-report-errors-link-should-never-duplicate";
         _tableOfContent.AppendLine($"* [Ошибки формирования readme](#{errorsLink})");
-        _body.AppendLine(@$"<a name=""{errorsLink}""></a>");
+        _body.AppendLine(@$"<a id=""{errorsLink}""></a>");
         _body.AppendLine("# Ошибки формирования readme");
 
         if (_errors.HasTestCaseErrors)

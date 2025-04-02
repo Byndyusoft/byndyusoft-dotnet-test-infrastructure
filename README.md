@@ -8,7 +8,7 @@
 * [Генератор отчёта по тест-кейсам](#TestCaseReadmeSolutionReporter)
 
 ---
-<a name="create-tests"></a>
+<a id="create-tests"></a>
 ## Создание тестовых сценариев интеграционных тестов
 Необходимо создать вспомогательные классы для класса тестового сценария
 
@@ -105,7 +105,7 @@
   
 ---  
   
-<a name="TestCaseReadmeSolutionReporter"></a>
+<a id="TestCaseReadmeSolutionReporter"></a>
 ## Генератор отчёта по тест-кейсам
 
 **Назначение:** Формирование отчёта по всем тест-кейсам в проекте.  
